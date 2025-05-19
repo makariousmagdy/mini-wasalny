@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GUI1Class</class>
+ <widget class="QMainWindow" name="GUI1Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Graph Manager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+	   QMainWindow {
+	   background-color: white;
+	   }
+	   QLabel, QPushButton, QLineEdit, QComboBox, QSpinBox, QTextEdit, QListWidget, QTableWidget {
+	   color: black;
+	   font-family: 'Segoe UI', Arial, sans-serif;
+	   }
+	   QPushButton {
+	   background-color: #4CAF50;
+	   color: white;
+	   border: none;
+	   padding: 8px 16px;
+	   border-radius: 4px;
+	   font-weight: bold;
+	   margine: 40px;
+	   width: 100px;
+	   height: 60px;
+	   }
+	   QPushButton:hover {
+	   background-color: #45a049;
+	   }
+	   QPushButton:pressed {
+	   background-color: #3d8b40;
+	   }
+	   QPen{
+	   font-size: 20px;
+	   }
+	   QTableRoads {
+	   background-color: white;
+	   color : white;
+	   }
+	   QLineEdit, QComboBox, QSpinBox {
+	   border: 1px solid #ccc;
+	   border-radius: 4px;
+	   padding: 6px;
+	   }
+	   QTextEdit, QListWidget, QTableWidget {
+	   border: 1px solid #ddd;
+	   border-radius: 4px;
+	   background-color: #f9f9f9;
+	   font-size: 20px;
+	   }
+	   QTableWidget {
+	   gridline-color: #ddd;
+	   }
+	   QHeaderView::section {
+	   background-color: #4CAF50;
+	   color: white;
+	   padding: 4px;
+	   }
+	   QMenuBar {
+	   background-color: black;
+	   border-bottom: 1px solid #ddd;
+	   }
+	   QMenuBar::item {
+	   padding: 5px 10px;
+	   background: transparent;
+	   color: white;
+	   }
+	   QMenuBar::item:selected {
+	   background: #e0e0e0;
+	   color: black;
+	   }
+	   QMenu {
+	   background-color: white;
+	   border: 1px solid #ddd;
+	   color: black;
+	   }
+	   QMenu::item:selected {
+	   background-color: black;
+	   color: white;
+	   }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="homePage">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #2c3e50;</string>
+          </property>
+          <property name="text">
+           <string>Graph Manager</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnCities">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #2b547e;</string>
+          </property>
+          <property name="text">
+           <string>Manage Cities</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnRoads">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #2b547e;</string>
+          </property>
+          <property name="text">
+           <string>Manage Roads</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDisplay">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #2b547e;</string>
+          </property>
+          <property name="text">
+           <string>View Graph</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSearch">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #2b547e;</string>
+          </property>
+          <property name="text">
+           <string>Find Paths</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="citiesPage">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>City Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txtCityName">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+background: white;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btnAddCity">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnUpdateCity">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDeleteCity">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnRefreshCities">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnHome">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Home</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listCities"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="roadsPage">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Source:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbSourceCity">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+color: black;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Destination:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbDestinationCity">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+color: black;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Distance:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinDistance">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255)</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10000</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="btnAddRoad">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnUpdateRoad">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDeleteRoad">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnRefreshRoads">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnHome_2">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Home</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableRoads">
+          <column>
+           <property name="text">
+            <string>Source</string>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Destination</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Distance</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="displayPage">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>City:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbDisplayCity">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+background: white;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDisplayNeighbors">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Show Neighbors</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDisplayFull">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Show Full Graph</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnHome_3">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Home</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="txtDisplay">
+          <property name="styleSheet">
+           <string notr="true">background: white;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="searchPage">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Start:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbStartCity">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+background: white;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>End:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbEndCity">
+            <property name="styleSheet">
+             <string notr="true">background: white;
+color: black;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="btnDijkstra">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Dijkstra</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDFS">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>DFS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBFS">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>BFS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnHome_4">
+            <property name="styleSheet">
+             <string notr="true">background-color: #2b547e;</string>
+            </property>
+            <property name="text">
+             <string>Home</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="txtResults"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionLoad"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSave">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>&amp;Load</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
